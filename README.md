@@ -2,36 +2,24 @@
 # Model Evaluation and Validation
 ## Project: Predicting Boston Housing Prices
 
-### Install
+## Project Overview
+In this project, I applied basic machine learning concepts on data collected for housing prices in the Boston, Massachusetts area to predict the selling price of a new home. I first explored the data to obtain important features and descriptive statistics about the dataset. Next, I properly split the data into testing and training subsets, and determined a suitable performance metric for this problem. I then analyzed performance graphs for a learning algorithm with varying parameters and training set sizes. This enabled me to pick the optimal model that best generalizes for unseen data. Finally, I tested this optimal model on a new sample and compared the predicted selling price to your statistics.
 
-This project requires **Python 2.7**(if you complete this project in Python 3.x, you will have to update the code in various places including all relevant print statements) and the following Python libraries installed:
+Things I learned by completing this project:
 
-- [NumPy](http://www.numpy.org/)
-- [Pandas](http://pandas.pydata.org/)
-- [matplotlib](http://matplotlib.org/)
-- [scikit-learn](http://scikit-learn.org/stable/)
+- How to use NumPy to investigate the latent features of a dataset.
+- How to analyze various learning performance plots for variance and bias.
+- How to determine the best-guess model for predictions from unseen data.
+- How to evaluate a model's performance on unseen data using previous data.
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
+### Project files
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer.
+This project contains three files:
 
-### Code
+- `boston_housing.ipynb`: This is the main file where I performed the work on the project.
+- `housing.csv`: The project dataset. 
+- `visuals.py`: This Python script provides supplementary visualizations for the project. Do not modify.
 
-Template code is provided in the `boston_housing.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `housing.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
-
-### Run
-
-In a terminal or command window, navigate to the top-level project directory `boston_housing/` (that contains this README) and run one of the following commands:
-
-```bash
-ipython notebook boston_housing.ipynb
-```  
-or
-```bash
-jupyter notebook boston_housing.ipynb
-```
-
-This will open the Jupyter Notebook software and project file in your browser.
 
 ### Data
 
