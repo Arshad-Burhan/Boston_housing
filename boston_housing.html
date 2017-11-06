@@ -11806,7 +11806,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11836,6 +11836,18 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\Burhan\Anaconda3\envs\py27\lib\site-packages\sklearn\cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  &#34;This module will be removed in 0.20.&#34;, DeprecationWarning)
+C:\Users\Burhan\Anaconda3\envs\py27\lib\site-packages\sklearn\learning_curve.py:22: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
+  DeprecationWarning)
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -11880,7 +11892,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
@@ -11963,9 +11975,9 @@ Standard deviation of prices: $165,171.13
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li>A home that has an 'RM' value of 6 will be worth less than a home that has an 'RM' value of 7.</li>
-<li>A neighborhood that has an 'LSTAT' value of 15 will have home prices worth more than a neighborhood that has an 'LSTAT' value of 20.</li>
-<li>A neighborhood that has an 'PTRATIO' value of 10 will have home prices worth more than a neighborhood that has an 'PTRATIO' value of 15</li>
+<li>'RM'value represents the number of rooms in a home. A house with more number of rooms will be worth more than a home with less number of rooms. Therefore, a home that has an 'RM' value of 6 will be worth less than a home that has an 'RM' value of 7.</li>
+<li>'LSTAT'value represents percentage of lower class people in the neighbourhood. The standard of living and lifestyle of people in the neighbourhood will reflect in the price of the house. A neighbourhood of lower class people will be worth less than one of upper class. Therefore, neighborhood that has an 'LSTAT' value of 15 will have home prices worth more than a neighborhood that has an 'LSTAT' value of 20.</li>
+<li>'PTRATIO'value represents the ratio of students to teachers in primary and secondary schools in the neighborhood. So, a lesser value means the more teachers will be available to guide less number of students and thus individual care will be higher. A neighborhood that has an 'PTRATIO' value of 10 will have home prices worth more than a neighborhood that has an 'PTRATIO' value of 15</li>
 </ul>
 
 </div>
@@ -13287,7 +13299,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <h3 id="Top-Right-Model">Top Right Model<a class="anchor-link" href="#Top-Right-Model">&#182;</a></h3><ul>
 <li>The maximum depth of the model is 3</li>
 <li>The training curve as well as the testing curve converges as more training points are added </li>
-<li>I don't think it will benefit the model as it has reached it maximum performance with the given complexity(maximum depth=3).</li>
+<li>Having more training points defenetly benefit the model in the initial phase as we can see the test score increases with the number of training points. But, after 300 training points,I don't think bringing more training points will benefit the model anymore as it has reached it maximum performance with the given complexity(maximum depth=3).</li>
 </ul>
 
 </div>
@@ -14021,7 +14033,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <p><strong> Hint: </strong> The answer comes from the output of the code snipped above.</p>
 <p><strong>Answer: </strong></p>
 <ul>
-<li>5</li>
+<li>The maximum depth for the optimal model is 5. It is very close to the my prediction of max_depth=4, and I think the progress from max_depth=4 to max_depth=5 is very less, as can be inferred from the complexity performance graph.</li>
 </ul>
 
 </div>
@@ -14110,6 +14122,119 @@ Predicted selling price for Client 3&#39;s home: $927,500.00
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RM</th>
+      <th>LSTAT</th>
+      <th>PTRATIO</th>
+      <th>MEDV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>489.000000</td>
+      <td>489.000000</td>
+      <td>489.000000</td>
+      <td>4.890000e+02</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>6.240288</td>
+      <td>12.939632</td>
+      <td>18.516564</td>
+      <td>4.543429e+05</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.643650</td>
+      <td>7.081990</td>
+      <td>2.111268</td>
+      <td>1.653403e+05</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.561000</td>
+      <td>1.980000</td>
+      <td>12.600000</td>
+      <td>1.050000e+05</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.880000</td>
+      <td>7.370000</td>
+      <td>17.400000</td>
+      <td>3.507000e+05</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>6.185000</td>
+      <td>11.690000</td>
+      <td>19.100000</td>
+      <td>4.389000e+05</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.575000</td>
+      <td>17.120000</td>
+      <td>20.200000</td>
+      <td>5.187000e+05</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.398000</td>
+      <td>37.970000</td>
+      <td>22.000000</td>
+      <td>1.024800e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -14122,7 +14247,12 @@ I would recommend following prices</p>
 <li>Client 2's home: \$287,100.00 </li>
 <li><p>Client 3's home: \$927,500.00</p>
 </li>
-<li><p>Yes, these prices seem reasonable with values of respective features as the prices increses with increase in rooms and decrease with other two features.</p>
+<li><p>Since it is reasonable to say that prices increses with increase in rooms and decrease with other two features,</p>
+<ul>
+<li>For client 1, the 'RM' value is close to the median value of 'RM' feature, 'LSTAT' value is slightly higher median value of the feature and 'PTRATIO' is lower than the median value of that feature. As a whole, we can justify its price being close to the median price.</li>
+<li>For client 2, rooms are less, the lower class percentage and PTRATIO are close to their respective maximum values. So,we can justify the price of the house belong to the first quartile of price range.</li>
+<li>For client 3, all the features are close to their respective maxima. So, we can justify its price being in the fourth quantile and close to the maximum price.</li>
+</ul>
 </li>
 </ul>
 
